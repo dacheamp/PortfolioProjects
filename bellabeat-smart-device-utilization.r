@@ -1,88 +1,14 @@
 {
  "cells": [
   {
-   "cell_type": "code",
-   "execution_count": 1,
-   "id": "ebdd90cc",
-   "metadata": {
-    "_execution_state": "idle",
-    "_uuid": "051d70d956493feee0c6d64651c6a088724dca2a",
-    "execution": {
-     "iopub.execute_input": "2023-07-16T07:58:46.057468Z",
-     "iopub.status.busy": "2023-07-16T07:58:46.055205Z",
-     "iopub.status.idle": "2023-07-16T07:58:47.392566Z",
-     "shell.execute_reply": "2023-07-16T07:58:47.390336Z"
-    },
-    "papermill": {
-     "duration": 1.347843,
-     "end_time": "2023-07-16T07:58:47.395446",
-     "exception": false,
-     "start_time": "2023-07-16T07:58:46.047603",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "── \u001b[1mAttaching core tidyverse packages\u001b[22m ──────────────────────── tidyverse 2.0.0 ──\n",
-      "\u001b[32m✔\u001b[39m \u001b[34mdplyr    \u001b[39m 1.1.2     \u001b[32m✔\u001b[39m \u001b[34mreadr    \u001b[39m 2.1.4\n",
-      "\u001b[32m✔\u001b[39m \u001b[34mforcats  \u001b[39m 1.0.0     \u001b[32m✔\u001b[39m \u001b[34mstringr  \u001b[39m 1.5.0\n",
-      "\u001b[32m✔\u001b[39m \u001b[34mggplot2  \u001b[39m 3.4.2     \u001b[32m✔\u001b[39m \u001b[34mtibble   \u001b[39m 3.2.1\n",
-      "\u001b[32m✔\u001b[39m \u001b[34mlubridate\u001b[39m 1.9.2     \u001b[32m✔\u001b[39m \u001b[34mtidyr    \u001b[39m 1.3.0\n",
-      "\u001b[32m✔\u001b[39m \u001b[34mpurrr    \u001b[39m 1.0.1     \n",
-      "── \u001b[1mConflicts\u001b[22m ────────────────────────────────────────── tidyverse_conflicts() ──\n",
-      "\u001b[31m✖\u001b[39m \u001b[34mdplyr\u001b[39m::\u001b[32mfilter()\u001b[39m masks \u001b[34mstats\u001b[39m::filter()\n",
-      "\u001b[31m✖\u001b[39m \u001b[34mdplyr\u001b[39m::\u001b[32mlag()\u001b[39m    masks \u001b[34mstats\u001b[39m::lag()\n",
-      "\u001b[36mℹ\u001b[39m Use the conflicted package (\u001b[3m\u001b[34m<http://conflicted.r-lib.org/>\u001b[39m\u001b[23m) to force all conflicts to become errors\n"
-     ]
-    },
-    {
-     "data": {
-      "text/html": [
-       "'fitbit'"
-      ],
-      "text/latex": [
-       "'fitbit'"
-      ],
-      "text/markdown": [
-       "'fitbit'"
-      ],
-      "text/plain": [
-       "[1] \"fitbit\""
-      ]
-     },
-     "metadata": {},
-     "output_type": "display_data"
-    }
-   ],
-   "source": [
-    "# This R environment comes with many helpful analytics packages installed\n",
-    "# It is defined by the kaggle/rstats Docker image: https://github.com/kaggle/docker-rstats\n",
-    "# For example, here's a helpful package to load\n",
-    "\n",
-    "library(tidyverse) # metapackage of all tidyverse packages\n",
-    "\n",
-    "# Input data files are available in the read-only \"../input/\" directory\n",
-    "# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory\n",
-    "\n",
-    "list.files(path = \"../input\")\n",
-    "\n",
-    "# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using \"Save & Run All\" \n",
-    "# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session"
-   ]
-  },
-  {
    "cell_type": "markdown",
-   "id": "73b8cf50",
+   "id": "d77a6a9c",
    "metadata": {
     "papermill": {
-     "duration": 0.004545,
-     "end_time": "2023-07-16T07:58:47.404875",
+     "duration": 0.003721,
+     "end_time": "2023-07-21T05:34:17.937505",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.400330",
+     "start_time": "2023-07-21T05:34:17.933784",
      "status": "completed"
     },
     "tags": []
@@ -111,30 +37,32 @@
     "* Identify business opportunities to apply trends to Bellabeat customers\n",
     "* Apply trends to company marketing strategies\n",
     "\n",
-    "# Key Takeaways\n",
-    "\n",
-    "1.\n",
-    "\n",
-    "# Recommendations\n",
-    "\n",
-    "1.\n",
     "\n",
     "# Ask\n",
     "\n",
     "1. What are some trends in smart device usage?\n",
     "2. How could these trends apply to Bellabeat customers?\n",
-    "3. How could these trends help influence Bellabeat marketing strategy?"
+    "3. How could these trends help influence Bellabeat marketing strategy?\n",
+    "\n",
+    "#Key Take-Aways\n",
+    "1. Higher activity impacts both calories burned but also sleep.\n",
+    "2. Users are more active with higher intensity later in the day.\n",
+    "\n",
+    "# Recommendations\n",
+    "\n",
+    "1. Conduct similar analysis in the future, with a larger data set to obtain more reliable analysis with a larger sample size. \n",
+    "2. Use the Bellabeat app to collect user provided information on their fitness goals (e.g. burning calories, better sleep, more activity) and use those goals to send personalized notifications or reminders based on discovered trends. \n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "d0892f5e",
+   "id": "faeddbd0",
    "metadata": {
     "papermill": {
-     "duration": 0.004782,
-     "end_time": "2023-07-16T07:58:47.414240",
+     "duration": 0.004486,
+     "end_time": "2023-07-21T05:34:17.945288",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.409458",
+     "start_time": "2023-07-21T05:34:17.940802",
      "status": "completed"
     },
     "tags": []
@@ -142,30 +70,47 @@
    "source": [
     "# Prepare\n",
     "\n",
-    "Load the necessary packages for analysis in R:"
+    "To work with this dataset in R, I needed to load packages for data analysis. I elected to use tidyverse, lubridate, dplyr, ggplot2, and tidyr because these packages contain the functions I typically need for projects. "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
-   "id": "2a043087",
+   "execution_count": 1,
+   "id": "c7717a39",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-07-16T07:58:47.458316Z",
-     "iopub.status.busy": "2023-07-16T07:58:47.425670Z",
-     "iopub.status.idle": "2023-07-16T07:58:47.478954Z",
-     "shell.execute_reply": "2023-07-16T07:58:47.477089Z"
+     "iopub.execute_input": "2023-07-21T05:34:17.956597Z",
+     "iopub.status.busy": "2023-07-21T05:34:17.954480Z",
+     "iopub.status.idle": "2023-07-21T05:34:19.086352Z",
+     "shell.execute_reply": "2023-07-21T05:34:19.084813Z"
     },
     "papermill": {
-     "duration": 0.062541,
-     "end_time": "2023-07-16T07:58:47.481561",
+     "duration": 1.139348,
+     "end_time": "2023-07-21T05:34:19.088228",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.419020",
+     "start_time": "2023-07-21T05:34:17.948880",
      "status": "completed"
     },
     "tags": []
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "── \u001b[1mAttaching core tidyverse packages\u001b[22m ──────────────────────── tidyverse 2.0.0 ──\n",
+      "\u001b[32m✔\u001b[39m \u001b[34mdplyr    \u001b[39m 1.1.2     \u001b[32m✔\u001b[39m \u001b[34mreadr    \u001b[39m 2.1.4\n",
+      "\u001b[32m✔\u001b[39m \u001b[34mforcats  \u001b[39m 1.0.0     \u001b[32m✔\u001b[39m \u001b[34mstringr  \u001b[39m 1.5.0\n",
+      "\u001b[32m✔\u001b[39m \u001b[34mggplot2  \u001b[39m 3.4.2     \u001b[32m✔\u001b[39m \u001b[34mtibble   \u001b[39m 3.2.1\n",
+      "\u001b[32m✔\u001b[39m \u001b[34mlubridate\u001b[39m 1.9.2     \u001b[32m✔\u001b[39m \u001b[34mtidyr    \u001b[39m 1.3.0\n",
+      "\u001b[32m✔\u001b[39m \u001b[34mpurrr    \u001b[39m 1.0.1     \n",
+      "── \u001b[1mConflicts\u001b[22m ────────────────────────────────────────── tidyverse_conflicts() ──\n",
+      "\u001b[31m✖\u001b[39m \u001b[34mdplyr\u001b[39m::\u001b[32mfilter()\u001b[39m masks \u001b[34mstats\u001b[39m::filter()\n",
+      "\u001b[31m✖\u001b[39m \u001b[34mdplyr\u001b[39m::\u001b[32mlag()\u001b[39m    masks \u001b[34mstats\u001b[39m::lag()\n",
+      "\u001b[36mℹ\u001b[39m Use the conflicted package (\u001b[3m\u001b[34m<http://conflicted.r-lib.org/>\u001b[39m\u001b[23m) to force all conflicts to become errors\n"
+     ]
+    }
+   ],
    "source": [
     "library(tidyverse)\n",
     "library(lubridate)\n",
@@ -176,38 +121,38 @@
   },
   {
    "cell_type": "markdown",
-   "id": "38e6c748",
+   "id": "f4cf0d46",
    "metadata": {
     "papermill": {
-     "duration": 0.004368,
-     "end_time": "2023-07-16T07:58:47.490621",
+     "duration": 0.002603,
+     "end_time": "2023-07-21T05:34:19.093915",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.486253",
+     "start_time": "2023-07-21T05:34:19.091312",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
     "\n",
-    "Import [FitBit Fitness Tracker Data](http://www.kaggle.com/datasets/arashnic/fitbit)"
+    "Once the packages are loaded, I imported the [FitBit Fitness Tracker Data](http://www.kaggle.com/datasets/arashnic/fitbit)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
-   "id": "0064c25b",
+   "execution_count": 2,
+   "id": "4bc1ee69",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-07-16T07:58:47.503854Z",
-     "iopub.status.busy": "2023-07-16T07:58:47.502068Z",
-     "iopub.status.idle": "2023-07-16T07:58:47.678395Z",
-     "shell.execute_reply": "2023-07-16T07:58:47.675526Z"
+     "iopub.execute_input": "2023-07-21T05:34:19.124534Z",
+     "iopub.status.busy": "2023-07-21T05:34:19.101061Z",
+     "iopub.status.idle": "2023-07-21T05:34:19.268628Z",
+     "shell.execute_reply": "2023-07-21T05:34:19.267030Z"
     },
     "papermill": {
-     "duration": 0.186281,
-     "end_time": "2023-07-16T07:58:47.681306",
+     "duration": 0.174188,
+     "end_time": "2023-07-21T05:34:19.270784",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.495025",
+     "start_time": "2023-07-21T05:34:19.096596",
      "status": "completed"
     },
     "tags": []
@@ -223,38 +168,38 @@
   },
   {
    "cell_type": "markdown",
-   "id": "cd667cb3",
+   "id": "2ac9ce78",
    "metadata": {
     "papermill": {
-     "duration": 0.004585,
-     "end_time": "2023-07-16T07:58:47.690689",
+     "duration": 0.003219,
+     "end_time": "2023-07-21T05:34:19.277064",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.686104",
+     "start_time": "2023-07-21T05:34:19.273845",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "Inspect columns and review data and formatting"
+    "When the data was imported, I started to inspect columns and review data as well as formatting so I could begin exploratory analysis. There are columns containing data for activity, calories, intensities, sleep and weight. Additionally, I standardized the data time format across all datasets. "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "id": "ef8078d2",
+   "execution_count": 3,
+   "id": "997450ce",
    "metadata": {
     "_kg_hide-output": false,
     "execution": {
-     "iopub.execute_input": "2023-07-16T07:58:47.713035Z",
-     "iopub.status.busy": "2023-07-16T07:58:47.702551Z",
-     "iopub.status.idle": "2023-07-16T07:58:48.370359Z",
-     "shell.execute_reply": "2023-07-16T07:58:48.368441Z"
+     "iopub.execute_input": "2023-07-21T05:34:19.288479Z",
+     "iopub.status.busy": "2023-07-21T05:34:19.286931Z",
+     "iopub.status.idle": "2023-07-21T05:34:19.750632Z",
+     "shell.execute_reply": "2023-07-21T05:34:19.749161Z"
     },
     "papermill": {
-     "duration": 0.677734,
-     "end_time": "2023-07-16T07:58:48.373026",
+     "duration": 0.472049,
+     "end_time": "2023-07-21T05:34:19.752812",
      "exception": false,
-     "start_time": "2023-07-16T07:58:47.695292",
+     "start_time": "2023-07-21T05:34:19.280763",
      "status": "completed"
     },
     "tags": []
@@ -2340,13 +2285,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c5893878",
+   "id": "6d4826ae",
    "metadata": {
     "papermill": {
-     "duration": 0.01084,
-     "end_time": "2023-07-16T07:58:48.397594",
+     "duration": 0.007108,
+     "end_time": "2023-07-21T05:34:19.766698",
      "exception": false,
-     "start_time": "2023-07-16T07:58:48.386754",
+     "start_time": "2023-07-21T05:34:19.759590",
      "status": "completed"
     },
     "tags": []
@@ -2356,21 +2301,40 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "312a2ab6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006388,
+     "end_time": "2023-07-21T05:34:19.781526",
+     "exception": false,
+     "start_time": "2023-07-21T05:34:19.775138",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "When processing the data,I noted that the data sets do not contain many unique participants, making this sample less reliable for drawing conclusions from due to varience. Bellabeat can still gain some preliminary insights from these data, however it should really be used as a starting point, rather than considered conclusive as a result of this sample size. \n",
+    "\n",
+    "I then explored the data sets, looking at summary statistics for each, and then focusing on some key variables. I then created a merged data frame to allow me to explore different tables relationships to each other in visualization.  "
+   ]
+  },
+  {
    "cell_type": "code",
-   "execution_count": 5,
-   "id": "2615477a",
+   "execution_count": 4,
+   "id": "6a1fb727",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-07-16T07:58:48.423232Z",
-     "iopub.status.busy": "2023-07-16T07:58:48.421324Z",
-     "iopub.status.idle": "2023-07-16T07:58:48.780968Z",
-     "shell.execute_reply": "2023-07-16T07:58:48.779051Z"
+     "iopub.execute_input": "2023-07-21T05:34:19.798745Z",
+     "iopub.status.busy": "2023-07-21T05:34:19.797172Z",
+     "iopub.status.idle": "2023-07-21T05:34:20.065658Z",
+     "shell.execute_reply": "2023-07-21T05:34:20.063723Z"
     },
     "papermill": {
-     "duration": 0.376579,
-     "end_time": "2023-07-16T07:58:48.784858",
+     "duration": 0.280358,
+     "end_time": "2023-07-21T05:34:20.068261",
      "exception": false,
-     "start_time": "2023-07-16T07:58:48.408279",
+     "start_time": "2023-07-21T05:34:19.787903",
      "status": "completed"
     },
     "tags": []
@@ -3199,13 +3163,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2323a321",
+   "id": "5e9bdc3d",
    "metadata": {
     "papermill": {
-     "duration": 0.015243,
-     "end_time": "2023-07-16T07:58:48.815782",
+     "duration": 0.008798,
+     "end_time": "2023-07-21T05:34:20.086429",
      "exception": false,
-     "start_time": "2023-07-16T07:58:48.800539",
+     "start_time": "2023-07-21T05:34:20.077631",
      "status": "completed"
     },
     "tags": []
@@ -3215,21 +3179,40 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "73e51f57",
+   "metadata": {
+    "papermill": {
+     "duration": 0.010232,
+     "end_time": "2023-07-21T05:34:20.105385",
+     "exception": false,
+     "start_time": "2023-07-21T05:34:20.095153",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Once I had processed the data and looked at some general summary stats, I moved to visualize the data. I was interested particularly in the relationships that could help inform Bellbeat's business. Some of the results of the visualization are pretty straightforward. Those who are very active, tend to burn more caloriies. That fact might mean that sending a notification or reminderto users who are looking to burn more calories to keep being active when they reach as certain number of steps could help increase activity. Those who spend more time in bed, tend to have more minutes asleep as do those who are more active overall. Looking at the times that people are active, it is clear that most activity happens later in the day, so sending prompts at that time may influence activity in those who are not active. \n",
+    "\n",
+    "In doing this analysis and considering fitness, the data I wish I also had in addition to this, is what the goals and interests of these unique users are. Understanding a users goals for activity, sleep, or calories could allow Bellabeat to create targeted notifications that support those goals, making Bellabeat more of a part of their fitness journey."
+   ]
+  },
+  {
    "cell_type": "code",
-   "execution_count": 6,
-   "id": "73c30b2b",
+   "execution_count": 5,
+   "id": "eb1a77ef",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-07-16T07:58:48.851042Z",
-     "iopub.status.busy": "2023-07-16T07:58:48.849217Z",
-     "iopub.status.idle": "2023-07-16T07:58:52.407831Z",
-     "shell.execute_reply": "2023-07-16T07:58:52.405092Z"
+     "iopub.execute_input": "2023-07-21T05:34:20.126935Z",
+     "iopub.status.busy": "2023-07-21T05:34:20.125434Z",
+     "iopub.status.idle": "2023-07-21T05:34:22.914215Z",
+     "shell.execute_reply": "2023-07-21T05:34:22.912597Z"
     },
     "papermill": {
-     "duration": 3.583281,
-     "end_time": "2023-07-16T07:58:52.414672",
+     "duration": 2.803085,
+     "end_time": "2023-07-21T05:34:22.917407",
      "exception": false,
-     "start_time": "2023-07-16T07:58:48.831391",
+     "start_time": "2023-07-21T05:34:20.114322",
      "status": "completed"
     },
     "tags": []
@@ -3367,14 +3350,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 10.33802,
-   "end_time": "2023-07-16T07:58:52.568518",
+   "duration": 8.404338,
+   "end_time": "2023-07-21T05:34:23.054619",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2023-07-16T07:58:42.230498",
+   "start_time": "2023-07-21T05:34:14.650281",
    "version": "2.4.0"
   }
  },
